@@ -69,8 +69,9 @@ export default {
       this.isActive = !this.isActive;
     },
     login() {
-      if (this.input.email !== "" || this.input.password !== "") {
+      if (this.input.email !== "" && this.input.password !== "") {
         console.log("authenticated");
+        this.changeForm()
       } else {
         console.log("Username and Password can not be empty!");
       }
@@ -118,7 +119,7 @@ body {
 }
 
 .header1 {
-  margin-bottom: 2rem;
+  margin-bottom: 10px;
   
 }
 .underline:hover {
@@ -331,7 +332,6 @@ body {
   position: relative;
   background-color: #512da8;
   border-radius: 4em;
-
   font-size: 14px;
   color: white;
   padding: 10px 45px;
