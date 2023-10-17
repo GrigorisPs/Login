@@ -62,6 +62,10 @@ export default {
         email: "",
         password: "",
       },
+      info:{
+        email:"grigoris@mail.com",
+        password: "123456"
+      }
     };
   },
   methods: {
@@ -69,11 +73,13 @@ export default {
       this.isActive = !this.isActive;
     },
     login() {
-      if (this.input.email !== "" && this.input.password !== "") {
+      
+      if (this.input.email == this.info.email && this.input.password == this.info.password) {
         console.log("authenticated");
+        console.log("Please enter the OTP")
         this.changeForm()
       } else {
-        console.log("Username and Password can not be empty!");
+        console.log("Username or Password is wrong! Try again");
       }
     },
     register() {},
