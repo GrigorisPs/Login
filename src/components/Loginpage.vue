@@ -2,36 +2,26 @@
   <div :class="{ container: true, active: isActive }" id="container">
     <div class="form-container sign-up">
       <form>
-        <h1>Create Account</h1>
-        <div class="social-icons">
-          <a href="#" class="icon"
-            ><i class="fa-brands fa-google-plus-g"></i
-          ></a>
-          <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-          <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+        <h1 class="header1">Enter the OTP</h1>
+        <div class="otp_container">
+          <div class="inputfield">
+            <input type="text" maxlength="1" class="opt_input"  />
+            <input type="text" maxlength="1" class="opt_input"  />
+            <input type="text" maxlength="1" class="opt_input"  />
+            <input type="text" maxlength="1" class="opt_input"  />
+            <input type="text" maxlength="1" class="opt_input"  />
+            <input type="text" maxlength="1" class="opt_input"  />
+          </div>
         </div>
-        <span>or use your email for registeration</span>
-        <input type="text" placeholder="Name" />
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
         <button class="formButton" type="submit" @click.prevent="register()">
-          Sign Up
+          Submit
         </button>
       </form>
     </div>
+
     <div class="form-container sign-in">
       <form>
-        <h1>Sign In</h1>
-        <div class="social-icons">
-          <a href="#" class="icon"
-            ><i class="fa-brands fa-google-plus-g"></i
-          ></a>
-          <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-          <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
-        </div>
-        <span>or use your email password</span>
+        <h1 class="header1">Sign In</h1>
         <input v-model="input.email" type="email" placeholder="Email" />
         <input
           v-model="input.password"
@@ -107,6 +97,29 @@ body {
   justify-content: center;
   flex-direction: column;
   height: 100vh;
+}
+.otp_container {
+  border-radius: 0.8em;
+  
+}
+.inputfield {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  
+}
+.opt_input {
+  outline: none;
+  text-align: center;
+  font-size: 1.5em;
+  border-radius: 0.3em;
+  outline: none;
+}
+
+.header1 {
+  margin-bottom: 2rem;
+  
 }
 .underline:hover {
   text-decoration: underline;
@@ -333,11 +346,8 @@ body {
   -webkit-transition-duration: 0.4s; /* Safari */
 }
 .formButton:hover {
-    
- transform:scale(1.01) ;
-
+  transform: scale(1.01);
 }
-
 
 .formButton:after {
   content: "";
