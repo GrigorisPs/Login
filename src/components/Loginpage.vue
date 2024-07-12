@@ -46,14 +46,14 @@
     </div>
     <div class="toggle-container">
       <div class="toggle">
-        <div class="toggle-panel toggle-left">
-          <h1>Welcome Back!</h1>
-          <p>Enter your personal details to use all of site features</p>
+        <div class="toggle-panel toggle-left welcome-back">
+          <!-- <h1>Welcome Back!</h1>
+          <p>Enter your personal details to use all of site features</p> -->
           <button class="btn" id="login" @click="changeForm">Sign In</button>
         </div>
         <div class="toggle-panel toggle-right">
-          <h1>Hello, Friend!</h1>
-          <p>Register with your personal details to use all of site features</p>
+          <!-- <h1>Hello, Friend!</h1>
+          <p>Register with your personal details to use all of site features</p> -->
           <button class="btn" id="register" @click="changeForm">Sign Up</button>
         </div>
       </div>
@@ -61,6 +61,7 @@
   </div>
   <div class="login-info"></div>
 </template>
+
 
 <script>
 export default {
@@ -100,14 +101,15 @@ export default {
 }
 
 body {
-  background-color: #c9d6ff;
-  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  background-color: #e1bee7; /* Light purple background */
+  background: linear-gradient(to right, #ce93d8, #e1bee7); /* Gradient with purple tones */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   height: 100vh;
 }
+
 .underline:hover {
   text-decoration: underline;
 }
@@ -143,7 +145,7 @@ body {
 }
 
 .container button {
-  background-color: #512da8;
+  background-color: #7b1fa2; /* Purple background for buttons */
   color: #fff;
   font-size: 12px;
   padding: 10px 45px;
@@ -157,9 +159,19 @@ body {
 }
 
 .container button.btn {
-  background-color: transparent;
-  border-color: white;
+  background-color: #4a148c; /* Darker purple background for buttons */
+  border-color: transparent;
   color: #fff;
+  position: absolute;
+  bottom: 30px; /* Position buttons lower */
+}
+
+#login {
+  left: 30%;
+}
+
+#register {
+  right: 25%;
 }
 
 .container form {
@@ -241,12 +253,12 @@ body {
   width: 40px;
   height: 40px;
 }
+
 .social-icons a:hover {
   transform: scale(1.2);
-  color: #512da8;
+  color: #7b1fa2; /* Purple for hover color */
   font-size: 15px;
-  border-color: #512da8;
-  color: #512da8;
+  border-color: #7b1fa2; /* Purple for hover border */
 }
 
 .toggle-container {
@@ -267,9 +279,9 @@ body {
 }
 
 .toggle {
-  background-color: #512da8;
+  background-color: #7b1fa2; /* Purple background */
   height: 100%;
-  background: linear-gradient(to right, #5c6bc0, #512da8);
+  background: linear-gradient(to right, #8e24aa, #7b1fa2); /* Gradient with purple tones */
   color: #fff;
   position: relative;
   left: -100%;
@@ -300,6 +312,9 @@ body {
 
 .toggle-left {
   transform: translateX(-200%);
+  background-image: url("/src/assets/background.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .container.active .toggle-left {
@@ -309,16 +324,19 @@ body {
 .toggle-right {
   right: 0;
   transform: translateX(0);
+  background-image: url("/src/assets/background.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .container.active .toggle-right {
   transform: translateX(200%);
 }
+
 .formButton {
   position: relative;
-  background-color: #512da8;
+  background-color: #7b1fa2; /* Purple background for form buttons */
   border-radius: 4em;
-
   font-size: 14px;
   color: white;
   padding: 10px 45px;
@@ -328,16 +346,13 @@ body {
   text-align: center;
   letter-spacing: 0.5px;
   text-decoration: none;
-  cursor: pointer;
   transition-duration: 0.4s;
   -webkit-transition-duration: 0.4s; /* Safari */
 }
+
 .formButton:hover {
-    
- transform:scale(1.01) ;
-
+  transform: scale(1.01);
 }
-
 
 .formButton:after {
   content: "";
@@ -350,7 +365,7 @@ body {
   height: 100%;
   opacity: 0;
   transition: all 0.5s;
-  box-shadow: 0 0 10px 30px #512da8;
+  box-shadow: 0 0 10px 30px #7b1fa2; /* Purple shadow */
 }
 
 .formButton:active:after {
@@ -366,4 +381,5 @@ body {
 .formButton:active {
   top: 1px;
 }
+
 </style>
