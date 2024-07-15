@@ -2,46 +2,42 @@
   <div :class="{ container: true, active: isActive }" id="container">
     <div class="form-container sign-up">
       <form>
-        <h1>Create Account</h1>
+        <h1 class="header" style="color: #89388d;">Καλωσορίσατε στο Iolife </h1>
         <div class="social-icons">
-          <a href="#" class="icon"
-            ><i class="fa-brands fa-google-plus-g"></i
-          ></a>
-          <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-          <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+          <p class="sub-header" style="color: #c2c2c7;">Παρακαλώ εισάγετε τα στοιχεία σας</p>
         </div>
-        <span>or use your email for registeration</span>
-        <input type="text" placeholder="Name" />
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
-        <button class="formButton" type="submit" @click.prevent="register()">
+        <input type="email" placeholder="Διεύθυνση ηλεκτρονικού ταχυδρομείου" />
+        <input type="password" placeholder="Κωδικός Πρόσβασης" />
+        <input type="password" placeholder="Επιβεβαίωση Κωδικού Πρόσβασης" />
+        <button class="formButton" style="background-color: #89388d;" type="submit" @click.prevent="register()">
           Sign Up
         </button>
+        <p>
+          Already have an account?
+          <a href="#" @click.prevent="changeForm" style="color: #89388d;text-decoration: underline;">Sign In</a>
+        </p>
       </form>
     </div>
     <div class="form-container sign-in">
       <form>
-        <h1>Sign In</h1>
+        <h1 class="header" style="color: #89388d;">Καλωσορίσατε στο Iolife </h1>
         <div class="social-icons">
-          <a href="#" class="icon"
-            ><i class="fa-brands fa-google-plus-g"></i
-          ></a>
-          <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-          <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+          <p class="sub-header" style="color: #c2c2c7;">Παρακαλώ εισάγετε τα στοιχεία σας</p>
         </div>
-        <span>or use your email password</span>
-        <input v-model="input.email" type="email" placeholder="Email" />
-        <input
-          v-model="input.password"
-          type="password"
-          placeholder="Password"
-        />
-        <a href="#" class="underline">Forgot Your Password?</a>
-        <button class="formButton" type="submit" @click.prevent="login()">
+        <input v-model="input.email" type="email" placeholder="Διεύθυνση ηλεκτρονικού ταχυδρομείου" />
+        <input v-model="input.password" type="password" placeholder="Κωδικός Πρόσβασης" />
+        <div class="flex-container">
+          <input type="checkbox" style="border: solid 2px #89388d;margin-right: 7px;">
+          <p style="text-wrap: nowrap;margin-right: 12px;margin-top: 20px;">Να με θυμάσαι</p>
+          <a href="#" class="underline" style="">Forgot Your Password?</a>
+        </div>
+        <button class="formButton" style="background-color: #89388d;" type="submit" @click.prevent="login()">
           Sign In
         </button>
+        <p>
+          Don't have an account?
+          <a href="#" @click.prevent="changeForm" style="color: #89388d;text-decoration: underline;">Sign Up</a>
+        </p>
       </form>
     </div>
     <div class="toggle-container">
@@ -49,18 +45,20 @@
         <div class="toggle-panel toggle-left welcome-back">
           <!-- <h1>Welcome Back!</h1>
           <p>Enter your personal details to use all of site features</p> -->
-          <button class="btn" id="login" @click="changeForm">Sign In</button>
+          <!-- <button class="btn" id="login" @click="changeForm">Sign In</button> -->
         </div>
         <div class="toggle-panel toggle-right">
           <!-- <h1>Hello, Friend!</h1>
           <p>Register with your personal details to use all of site features</p> -->
-          <button class="btn" id="register" @click="changeForm">Sign Up</button>
+          <!-- <button class="btn" style="background-color: #89388d;" id="register" @click="changeForm">Sign Up</button> -->
         </div>
       </div>
     </div>
   </div>
   <div class="login-info"></div>
 </template>
+
+
 
 
 <script>
@@ -100,6 +98,36 @@ export default {
   font-family: "Montserrat", sans-serif;
 }
 
+.header {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.72px;
+}
+.sub-header {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  color: rgba(45, 45, 61, 0.45);
+}
+.flex-container {
+            display: flex;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #89388d;
+        }
+
+.flex-container p {
+            margin-right: 15px;
+            color: #89388d;
+        }
+.flex-container a {
+            margin-left: 20px;
+            color: #89388d;
+            text-decoration: underline;
+            white-space: nowrap;
+        }
 body {
   background-color: #e1bee7; /* Light purple background */
   background: linear-gradient(to right, #ce93d8, #e1bee7); /* Gradient with purple tones */
@@ -111,6 +139,21 @@ body {
 }
 
 .underline:hover {
+  text-decoration: underline;
+}
+.container form p {
+  font-size: 14px;
+  color: #89388d;
+  margin-top: 10px;
+}
+
+.container form a {
+  color: #89388d;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.container form a:hover {
   text-decoration: underline;
 }
 
@@ -159,7 +202,7 @@ body {
 }
 
 .container button.btn {
-  background-color: #4a148c; /* Darker purple background for buttons */
+  background-color: #89388d; /* Darker purple background for buttons */
   border-color: transparent;
   color: #fff;
   position: absolute;
@@ -335,7 +378,7 @@ body {
 
 .formButton {
   position: relative;
-  background-color: #7b1fa2; /* Purple background for form buttons */
+  background-color: #89388d; /* Purple background for form buttons */
   border-radius: 4em;
   font-size: 14px;
   color: white;
